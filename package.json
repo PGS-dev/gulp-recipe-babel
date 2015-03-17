@@ -1,0 +1,23 @@
+{
+  "name": "gulp-recipe-babel",
+  "version": "0.1.0",
+  "description": "Receipe for babel files compilation and watching",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PGS-dev/gulp-recipe-babel.git"
+  },
+  "keywords": [
+    "PGS",
+    "gulp",
+    "gulp-receipe",
+    "babel"
+  ],
+  "author": "PGS Front",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-babel": "^4.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-sourcemaps": "^1.5.0"
+  }
+}
