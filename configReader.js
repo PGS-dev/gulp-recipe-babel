@@ -18,5 +18,6 @@ module.exports = function ($, config) {
         watchBabel: 'watch:babel'
     });
 
+    config.sources = _.pick(config.sources, 'babel');
     return config;
 };

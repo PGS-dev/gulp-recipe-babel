@@ -24,10 +24,10 @@ Configure babel task. This object is directly passed into [babel](https://babelj
 #### sources.babel
 > mandatory
 
-Source files for babel compiler. Accepts *.babel and *.sjs.
+Source files for babel compiler. Accepts *.babel and *.js.
 > example config:
 ```javascript
-sources.babel = ['app/components/**/*.sjs', 'app/*.sjs'];
+sources.babel = ['app/components/**/*.js', 'app/*.js'];
 ```
 
 ### Paths
