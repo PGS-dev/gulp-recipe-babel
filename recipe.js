@@ -37,14 +37,14 @@ module.exports = function ($, config, sources) {
      * @config paths.tmp temp folder location
      * @sequential devProcessJs runs js processors on compiled babel files
      */
-    $.gulp.task(config.tasks.babel, function () {
+    function babelTask() {
         var processJsPipe = $.utils.sequentialLazypipe($.utils.getPipes('devProcessJs'));
 
         return babelSource
             .pipe(processJsPipe)
             .pipe($.sourcemaps.write)
             .pipe($.gulp.dest, config.paths.tmp)();
-    });
+    }
 
     /**
      * Runs babel watcher, compile only changed main file or all files when partial is changed
@@ -53,7 +53,7 @@ module.exports = function ($, config, sources) {
      * @config tasks.watchBabel
      * @deps babel
      */
-    $.gulp.task(config.tasks.watchBabel, [config.tasks.babel], function () {
+    function watchBabelTask() {
         var fs = require('fs');
 
         var processJsPipe = $.utils.sequentialLazypipe($.utils.getPipes('devProcessJs'));
@@ -70,7 +70,10 @@ module.exports = function ($, config, sources) {
                 fs.unlink(path.join(config.paths.tmp, path.relative(vinyl.base, vinyl.path).replace(/\.s(?:a|c)ss$/, '.js')));
             }
         }).pipe(process)();
-    });
+    }
+
+        $.utils.maybeTask(config.tasks.babel, babelTask);
+        $.utils.maybeTask(config.tasks.watchBabel, watchBabelTask);
 
     return {
         /**
@@ -80,6 +83,7 @@ module.exports = function ($, config, sources) {
             assetBabel: babelSource
         },
 
+        compile: config.tasks.babel,
         watch: config.tasks.watchBabel
     };
 };
