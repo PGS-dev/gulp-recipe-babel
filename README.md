@@ -1,4 +1,4 @@
-# [gulp-recipe](https://github.com/PGS-dev/gulp-recipe-loader)-babel [![Dependency Status][depstat-image]][depstat-url]
+# [gulp-recipe](https://github.com/PGSSoft/gulp-recipe-loader)-babel [![Dependency Status][depstat-image]][depstat-url]
 [![NPM][npm-image]][npm-url]
 
 Recipe for babel files compilation and js transforms application.
@@ -20,7 +20,7 @@ Watch for changes on all babel files and compile them.
 
 Configure babel task. This object is directly passed into [babel](https://babeljs.io/docs/usage/options/) as options.
 
-### [Sources](https://github.com/PGS-dev/gulp-recipe-loader#sources-configuration-syntax)
+### [Sources](https://github.com/PGSSoft/gulp-recipe-loader#sources-configuration-syntax)
 #### sources.babel
 > mandatory
 
@@ -61,5 +61,5 @@ Provide compiled babel files into build as assets.
 
 [npm-url]: https://npmjs.org/package/gulp-recipe-babel
 [npm-image]: https://nodei.co/npm/gulp-recipe-babel.png?downloads=true
-[depstat-url]: https://david-dm.org/PGS-dev/gulp-recipe-babel
-[depstat-image]: https://img.shields.io/david/PGS-dev/gulp-recipe-babel.svg?style=flat
+[depstat-url]: https://david-dm.org/PGSSoft/gulp-recipe-babel
+[depstat-image]: https://img.shields.io/david/PGSSoft/gulp-recipe-babel.svg?style=flat
