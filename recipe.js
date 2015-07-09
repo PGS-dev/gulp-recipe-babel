@@ -20,7 +20,9 @@ module.exports = function ($, config, sources) {
     var babelProcess = $.lazypipe()
         .pipe(function () {
             var stream = $.plumber();
-            stream.pipe($.babel(config.babel));
+            stream
+                .pipe($.babel(config.babel))
+                .pipe($.plumber.stop());
             return stream;
         });
 
