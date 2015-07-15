@@ -22,7 +22,8 @@ module.exports = function ($, config, sources) {
             var stream = $.plumber();
             stream
                 .pipe($.babel(config.babel))
-                .pipe($.plumber.stop());
+                .pipe($.plumber.stop())
+                .pipe($.through2.obj());
             return stream;
         });
 
